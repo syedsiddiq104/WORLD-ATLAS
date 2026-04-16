@@ -12,7 +12,7 @@ const HeroSection = () => {
             Discover the history, culture, and beauty of every nation. Sort,
             search, and filter through countries to find the details you need.
           </p>
-          <NavLink to={'/about'}><button>Explore More<FaLongArrowAltRight /></button></NavLink>
+          <NavLink to={'/about'}><button><span>Explore More <FaLongArrowAltRight /></span></button></NavLink>
         </div>
         <div className="hero-image">
                 <img src="../../public/images/world.png" alt="world" className="banner-image" />
@@ -23,3 +23,4 @@ const HeroSection = () => {
 }
 
 export default HeroSection
+

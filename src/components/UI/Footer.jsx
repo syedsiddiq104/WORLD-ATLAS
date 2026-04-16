@@ -32,8 +32,8 @@ export const Footer = () => {
 
       <div className="copyright-area">
         <div className="container">
-          <div className="grid grid-two-cols">
-            <div className="copyright-text">
+          <div className="grid ">
+            <div className="grid-three-cols copyright-text">
               <p>
                 Copyright &copy; 2024, All Right Reserved
                 <NavLink to="https://syedsiddiq104.github.io/PORTFOLIO_V3/" target="_blank">

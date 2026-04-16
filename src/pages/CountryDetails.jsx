@@ -30,7 +30,7 @@ const CountryDetails = () => {
   useEffect(() => {
     fetchCountry();
   }, [id]);
-
+console.log(country)
   if (loading) return <Loader />;
   if (!country) return <h1>No Data Found</h1>;
 
@@ -62,7 +62,8 @@ const CountryDetails = () => {
 
 
       <div className="country-card-backBtn">
-        <button onClick={() => navigate(-1)}>← Back</button>
+        <button onClick={() => navigate(-1)}><span>← Back</span>
+        </button>
       </div>
 
       <div className="container-card bg-white-box">

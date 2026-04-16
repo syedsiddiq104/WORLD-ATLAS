@@ -25,7 +25,7 @@ let navigate = useNavigate()
 
           <NavLink to={`/country/${name.common}`}>
         <button >
-          Read More →
+          <span>Read More →</span>
         </button>
           </NavLink>
        
