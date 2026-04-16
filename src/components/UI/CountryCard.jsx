@@ -1,13 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const CountryCard = ({ country }) => {
 
   const { name, flags, population, capital, region } = country;
-  console.log(population)
-console.log(country)
-
+//   console.log(population)
+// console.log(country)
+let navigate = useNavigate()
   return (
-    <li className="country-card card">
+    <li className="country-card card" onClick={() => navigate(`/country/${name.common}`)}>
       <div className="container-card bg-white-box">
         <img src={flags?.svg} alt={name.common} className="flag" />
 

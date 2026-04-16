@@ -500,6 +500,13 @@ country Card
   color: rgba(255, 255, 255, 0.5);
 }
 
+.badges {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: whitesmoke;
+}
 /* ------------------ 
 contact us page 
 --------------- */
