@@ -27,7 +27,7 @@ h5 {
 
 p,
 li,
-a,
+li a,
 button {
   font-size: 1.7rem;
   letter-spacing: 0.1rem;
@@ -35,16 +35,12 @@ button {
   color: #fff;
 }
 
-li {
+li{
   list-style: none;
 }
 
 a {
   color: #000;
-
-  &:hover {
-    color: #2e86c1;
-  }
 }
 
 button {
@@ -591,7 +587,7 @@ contact us Page ends here
 .loader {
   width: 65px;
   aspect-ratio: 1;
-  position: fixed; /* 🔥 change this */
+  position: fixed; 
   top: 50%;
   left: 50%;
   z-index: 999;
@@ -621,3 +617,81 @@ contact us Page ends here
   100%  {inset:0    35px 35px 0   }
 }
 
+/* ===== COUNTRY DETAILS MATCHED THEME ===== */
+
+.country-details-card {
+  max-width: 120rem;
+  margin: 6.4rem auto;
+}
+
+.country-details-card .container-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 40px;
+}
+
+/* FLAG */
+.country-details-card img {
+  width: 100%;
+  max-width: 35rem;
+  border-radius: 20px;
+  justify-self: center;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 30px 80px;
+}
+
+/* TEXT CONTENT */
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.infoContainer h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+/* TEXT STYLE */
+.infoContainer p {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.infoContainer strong {
+  color: #fff;
+}
+
+/* BACK BUTTON */
+.country-card-backBtn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.country-card-backBtn button {
+  background: linear-gradient(71deg, #080509, #1a171c, #080509);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 2rem;
+  padding: 0.8rem 2rem;
+}
+
+.country-card-backBtn button:hover {
+  border-color: #3a4ed5;
+  color: #3a4ed5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .country-details-card .container-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .country-card-backBtn {
+    justify-content: center;
+  }
+}

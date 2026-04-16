@@ -1,45 +1,73 @@
-import axios from 'axios'
-import { useEffect, useState, useTransition } from 'react'
-import Loader from '../components/UI/Loader';
-import CountryCard from '../components/UI/CountryCard';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Loader from "../components/UI/Loader";
+import CountryCard from "../components/UI/CountryCard";
 
 const Country = () => {
   const [countryData, setcountryData] = useState([]);
-  const [isPending, startTransition] = useTransition()
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
 
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const APIDATA = async () => {
-  try {
-    const response = await axios.get(
-      "https://restcountries.com/v3.1/all?fields=name,flags,population,capital,currencies,region"
-    );
+  const APIDATA = async () => {
+    try {
+      setLoading(true);
 
-    startTransition(() => {
+      const startTime = Date.now();
+
+      const response = await axios.get(
+        "https://restcountries.com/v3.1/all?fields=name,flags,population,capital,currencies,region"
+      );
+
+      
+      const elapsed = Date.now() - startTime;
+      const minDelay = 1500;
+
+      if (elapsed < minDelay) {
+        await delay(minDelay - elapsed);
+      }
+
       setcountryData(response.data);
-    });
 
-  } catch (err) {
-    console.log(err);
-  }
-};
+    } catch (err) {
+      console.log(err);
+      setError("Failed to fetch countries");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    APIDATA()
-  },[])
+    APIDATA();
+  }, []);
 
-  if(isPending) return <Loader/>
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, [countryData]);
 
-  console.log(countryData)
+  if (loading) return <Loader />;
+
+ 
+  if (error) return <h1>{error}</h1>;
+
+
+  if (countryData.length === 0) return <h1>No Countries Found</h1>;
+
+
   return (
-    <section className='country-section'>
-      <ul className='grid grid-four-cols'>{
-        countryData.map((curcountry, index) => {
-          return <CountryCard key={index} country = {curcountry}  />
-        })}
-
+    <section className="country-section">
+      <ul className="grid grid-four-cols">
+        {countryData.map((curcountry) => (
+          <CountryCard
+            key={curcountry.name.common}
+            country={curcountry}
+          />
+        ))}
       </ul>
     </section>
-  )
-}
+  );
+};
 
-export default Country
+export default Country;

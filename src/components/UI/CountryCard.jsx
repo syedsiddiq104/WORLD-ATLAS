@@ -23,7 +23,7 @@ console.log(country)
 
         <span>region: {region}</span>
 
-          <NavLink to={`contact/${name.common}`}>
+          <NavLink to={`/country/${name.common}`}>
         <button >
           Read More →
         </button>

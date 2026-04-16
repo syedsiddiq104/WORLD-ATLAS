@@ -3,7 +3,7 @@ import React from 'react'
 const Loader = () => {
   return (
      <div style={{ height: "100vh" }}>
-      <Loader />
+      <div class="loader"></div>
     </div>
     
   )
