@@ -386,6 +386,7 @@ country Card
 ------------------ */
 
 .country-card {
+  cursor: pointer;
   margin-top: 3.2rem;
 }
 .country-section {
