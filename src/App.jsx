@@ -7,6 +7,7 @@ import Country from './pages/Country'
 import About from './pages/About'
 import Header from './components/UI/Header'
 import Footer from './components/UI/Footer'
+import CountryDetails from './pages/CountryDetails'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/country' element={<Country />} />
+        <Route path="/country/:name" element={<CountryDetails />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
       <Footer/>

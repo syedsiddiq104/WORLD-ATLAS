@@ -50,7 +50,7 @@ export const Footer = () => {
 
                 <li>
                   <NavLink
-                    to=""
+                    to="https://www.instagram.com/syedsiddiq104?igsh=OWRrZTF2ZXRjMjhp"
                     target="_blank"
                   >
                     Social
@@ -58,7 +58,7 @@ export const Footer = () => {
                 </li>
                 <li>
                   <NavLink
-                    to=""
+                    to="https://github.com/syedsiddiq104/WORLD-ATLAS.git"
                     target="_blank"
                   >
                     Source Code
